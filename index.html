@@ -1,0 +1,49 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=nitial-scale=1.0" />
+    <title>Back to School 🐲</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <h1>This is a H1</h1>
+    <fieldset>
+      <legend>Filter the view</legend>
+      <input type="button" value="Oregon & Washington" id="onw" />
+      <input type="button" value="Clear Filter" id="clear" />
+      <input type="button" value="Undo" id="undo" />
+    </fieldset>
+
+    <h2>This is a H2</h2>
+
+    <script
+      type="module"
+      src="https://public.tableau.com/javascripts/api/tableau.embedding.3.latest.min.js"
+    ></script>
+
+    <tableau-viz
+      id="tableauViz"
+      src="https://public.tableau.com/views/Superstore_embedded_800x800/Overview"
+      toolbar="bottom"
+      hide-tabs
+      height="1000px"
+      width="1000px"
+    >
+    </tableau-viz>
+
+    <h3>This is a H3</h3>
+    <p>This is a paragraph</p>
+    <div class="white_div">This is a div</div>
+    <div class="white_div" id="special_box">This is a div</div>
+    <span>This is a span</span>
+    <span>This is a span</span>
+    <img
+      src="https://www.petplan.co.uk/cat-insurance/cat-breeds/british-shorthair/_jcr_content/root/parsys/wrapper_1403564139_c_948468813/wrapper/multi_column_grid/grid-0-par/image_copy.img.82.3360.png/1743611301764/british-shorthair-what-to-know.png"
+      alt=""
+      height="200px"
+      width="200px"
+    />
+    <script src="app.js"></script>
+  </body>
+</html>

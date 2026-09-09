@@ -1,0 +1,282 @@
+/* Fonts (Archivo Black, Work Sans) are loaded via <link> tags in index.html <head> */
+
+/* ---------------------------------------------------------
+   Tokens — raw concrete + brick, gallery wall, wayfinding yellow
+   (Barbican's material palette, Tate's white-cube discipline)
+--------------------------------------------------------- */
+:root {
+  --ink: #14130f;
+  --wall: #eeece4;
+  --concrete: #b6b1a4;
+  --brick: #a53e22;
+  --signal: #e7b930;
+  --line: rgba(20, 19, 15, 0.85);
+  --hair: rgba(20, 19, 15, 0.18);
+
+  --font-display: "Archivo Black", "Arial Black", sans-serif;
+  --font-body: "Work Sans", -apple-system, BlinkMacSystemFont, sans-serif;
+
+  --gutter: clamp(20px, 5vw, 64px);
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  background-color: var(--wall);
+  color: var(--ink);
+  font-family: var(--font-body);
+  font-size: 17px;
+  line-height: 1.55;
+  padding-bottom: 96px;
+}
+
+/* ---------------------------------------------------------
+   Ticket stub — fixed corner mark, like a museum admission tag
+--------------------------------------------------------- */
+body::before {
+  content: "BTS / NO. 26";
+  position: fixed;
+  top: 18px;
+  right: var(--gutter);
+  font-family: var(--font-body);
+  font-weight: 600;
+  font-size: 12px;
+  letter-spacing: 0.08em;
+  color: var(--wall);
+  background: var(--ink);
+  padding: 6px 10px;
+  z-index: 10;
+}
+
+/* ---------------------------------------------------------
+   Section framing — every heading acts as a gallery room
+   divider: a full-bleed rule with a room number beside it
+--------------------------------------------------------- */
+h1,
+h2,
+h3 {
+  font-family: var(--font-display);
+  font-weight: 400;
+  color: var(--ink);
+  margin: 0;
+  text-transform: none;
+}
+
+h1 {
+  font-size: clamp(2.8rem, 8vw, 6rem);
+  line-height: 0.92;
+  padding: 76px var(--gutter) 28px;
+  border-bottom: 6px solid var(--ink);
+  position: relative;
+}
+
+h1::before {
+  content: "ROOM 01";
+  display: block;
+  font-family: var(--font-body);
+  font-weight: 600;
+  font-size: 13px;
+  letter-spacing: 0.08em;
+  color: var(--brick);
+  margin-bottom: 18px;
+}
+
+h2 {
+  font-size: clamp(1.8rem, 4vw, 2.75rem);
+  padding: 56px var(--gutter) 20px;
+  margin-top: 24px;
+  border-top: 2px solid var(--ink);
+}
+
+h2::before {
+  content: "ROOM 02";
+  display: block;
+  font-family: var(--font-body);
+  font-weight: 600;
+  font-size: 13px;
+  letter-spacing: 0.08em;
+  color: var(--brick);
+  margin-bottom: 14px;
+}
+
+h3 {
+  font-size: clamp(1.3rem, 2.6vw, 1.9rem);
+  padding: 48px var(--gutter) 4px;
+  margin-top: 12px;
+}
+
+h3::before {
+  content: "ROOM 03";
+  display: block;
+  font-family: var(--font-body);
+  font-weight: 600;
+  font-size: 13px;
+  letter-spacing: 0.08em;
+  color: var(--brick);
+  margin-bottom: 14px;
+}
+
+p {
+  max-width: 62ch;
+  padding: 0 var(--gutter);
+  margin: 12px 0 32px;
+  color: var(--ink);
+  font-size: 1.05rem;
+}
+
+/* ---------------------------------------------------------
+   Visitor controls — the fieldset reads as a wall plaque
+--------------------------------------------------------- */
+fieldset {
+  margin: 0 var(--gutter) 40px;
+  border: 2px solid var(--ink);
+  padding: 28px clamp(18px, 3vw, 32px) 24px;
+  background: var(--wall);
+}
+
+legend {
+  font-family: var(--font-body);
+  font-weight: 600;
+  font-size: 12px;
+  letter-spacing: 0.08em;
+  padding: 0 10px;
+  color: var(--wall);
+  background: var(--ink);
+}
+
+input[type="button"] {
+  font-family: var(--font-body);
+  font-weight: 600;
+  font-size: 14px;
+  letter-spacing: 0.02em;
+  color: var(--ink);
+  background: transparent;
+  border: 2px solid var(--ink);
+  padding: 12px 20px;
+  margin: 6px 12px 6px 0;
+  cursor: pointer;
+  transition:
+    background-color 0.15s ease,
+    color 0.15s ease;
+}
+
+input[type="button"]:hover {
+  background: var(--ink);
+  color: var(--wall);
+}
+
+input[type="button"]:active {
+  background: var(--brick);
+  border-color: var(--brick);
+  color: var(--wall);
+}
+
+input[type="button"]:focus-visible {
+  outline: 3px solid var(--signal);
+  outline-offset: 2px;
+}
+
+#clear {
+  border-color: var(--concrete);
+  color: var(--ink);
+}
+
+#undo {
+  border-style: dashed;
+}
+
+/* ---------------------------------------------------------
+   The exhibit — Tableau viz framed like a mounted work,
+   set on a raised concrete plinth
+--------------------------------------------------------- */
+tableau-viz {
+  display: block;
+  max-width: 100%;
+  margin: 8px var(--gutter) 12px;
+  border: 10px solid var(--ink);
+  background: var(--concrete);
+}
+
+/* ---------------------------------------------------------
+   Wall works — the two divs sit as a diptych, one raw,
+   one signalled with the single accent colour in the page
+--------------------------------------------------------- */
+div.white_div {
+  height: 260px;
+  width: 260px;
+  background: var(--wall);
+  border: 2px solid var(--ink);
+  display: inline-flex;
+  align-items: flex-end;
+  margin: 0 24px 40px var(--gutter);
+  padding: 14px;
+  font-family: var(--font-body);
+  font-size: 12px;
+  letter-spacing: 0.04em;
+  color: var(--ink);
+  vertical-align: top;
+}
+
+#special_box {
+  background: var(--brick);
+  color: var(--wall);
+  border-color: var(--brick);
+}
+
+/* ---------------------------------------------------------
+   Wall labels — spans as small gallery captions
+--------------------------------------------------------- */
+span {
+  display: inline-block;
+  font-size: 12px;
+  letter-spacing: 0.04em;
+  color: var(--ink);
+  border-top: 1px solid var(--hair);
+  padding: 8px 0 0;
+  margin: 0 var(--gutter) 24px 0;
+}
+
+span + span {
+  margin-left: 0;
+}
+
+/* ---------------------------------------------------------
+   Framed image — treated as a single mounted photograph
+   with a caption rail, the one moment of colour restraint
+--------------------------------------------------------- */
+img {
+  display: block;
+  height: 200px;
+  width: 200px;
+  object-fit: cover;
+  margin: 8px var(--gutter) 8px;
+  border: 10px solid var(--wall);
+  outline: 2px solid var(--ink);
+  outline-offset: -2px;
+  box-shadow: 0 18px 30px -20px rgba(20, 19, 15, 0.6);
+}
+
+/* ---------------------------------------------------------
+   Small screens — collapse the diptych, tighten the gutter
+--------------------------------------------------------- */
+@media (max-width: 640px) {
+  div.white_div {
+    display: block;
+    width: calc(100% - var(--gutter) - 24px);
+  }
+
+  h1::before,
+  h2::before,
+  h3::before {
+    font-size: 11px;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  input[type="button"] {
+    transition: none;
+  }
+}
